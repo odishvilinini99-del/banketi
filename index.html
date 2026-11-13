@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ჩვენი ბანკეტი</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">ჩვენი <span>ბანკეტი</span></div>
+        <nav>
+            <a href="#home">მთავარი</a>
+            <a href="#ideas">იდეები</a>
+            <a href="#add-idea">დაამატე იდეა</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">ერთად შევქმნათ დაუვიწყარი დღე</p>
+                <h1>ჩვენი ბანკეტი,<br><span>ჩვენი იდეები!</span></h1>
+                <p class="hero-description">
+                    გაქვს იდეა ჩვენი ბანკეტისთვის? გაგვიზიარე!
+                    აქ ყველას შეუძლია საკუთარი აზრის დამატება
+                    და სხვების იდეების ნახვა.
+                </p>
+                <a href="#add-idea" class="hero-button">გააზიარე შენი იდეა</a>
+            </div>
+            <div class="hero-decoration">
+                <div class="decoration-circle">✦</div>
+                <div class="decoration-text">A special<br>day for us</div>
+            </div>
+        </section>
+
+        <section class="ideas-section" id="ideas">
+            <div class="section-heading">
+                <p class="eyebrow">ერთ სივრცეში თავმოყრილი აზრები</p>
+                <h2>ბანკეტის იდეები</h2>
+                <p>ნახე, რას გვთავაზობენ სხვები.</p>
+            </div>
+
+            <div class="filters">
+                <button class="filter active" data-category="ყველა">ყველა</button>
+                <button class="filter" data-category="მუსიკა">მუსიკა</button>
+                <button class="filter" data-category="ადგილი">ადგილი</button>
+                <button class="filter" data-category="მენიუ">მენიუ</button>
+                <button class="filter" data-category="დეკორაცია">დეკორაცია</button>
+                <button class="filter" data-category="სხვა">სხვა</button>
+            </div>
+
+            <div id="ideas-container" class="ideas-grid">
+                <p class="loading-text">იდეები იტვირთება...</p>
+            </div>
+        </section>
+
+        <section class="add-section" id="add-idea">
+            <div class="form-intro">
+                <p class="eyebrow">შენი აზრი მნიშვნელოვანია</p>
+                <h2>დაამატე ახალი იდეა</h2>
+                <p>შეავსე ფორმა და შენი იდეა ყველასთვის ხელმისაწვდომი გახდება.</p>
+            </div>
+
+            <form id="idea-form" class="idea-form">
+                <label for="author">შენი სახელი ან ფსევდონიმი</label>
+                <input
+                    type="text"
+                    id="author"
+                    maxlength="30"
+                    placeholder="მაგალითად: ნინი"
+                    required
+                >
+
+                <label for="category">აირჩიე კატეგორია</label>
+                <select id="category" required>
+                    <option value="">აირჩიე კატეგორია</option>
+                    <option value="მუსიკა">მუსიკა</option>
+                    <option value="ადგილი">ადგილი</option>
+                    <option value="მენიუ">მენიუ</option>
+                    <option value="დეკორაცია">დეკორაცია</option>
+                    <option value="სხვა">სხვა</option>
+                </select>
+
+                <label for="title">იდეის სათაური</label>
+                <input
+                    type="text"
+                    id="title"
+                    maxlength="70"
+                    placeholder="მაგალითად: ქართული მუსიკის საღამო"
+                    required
+                >
+
+                <label for="description">აღწერე შენი იდეა</label>
+                <textarea
+                    id="description"
+                    maxlength="500"
+                    rows="5"
+                    placeholder="მოგვიყევი შენი იდეის შესახებ..."
+                    required
+                ></textarea>
+
+                <button type="submit" id="submit-btn" class="submit-button">
+                    იდეის დამატება
+                </button>
+
+                <p id="message" class="message"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">ჩვენი ბანკეტი ✦</div>
+        <p>შექმნილია ჩვენი განსაკუთრებული დღისთვის.</p>
+        <p class="copyright">© 2026 ჩვენი ბანკეტი</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
